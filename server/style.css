@@ -1,0 +1,94 @@
+/*  
+Sticky Footer Solution
+by Steve Hatcher 
+http://stever.ca
+http://www.cssstickyfooter.com
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+} 
+textarea {
+    resize: none;
+	width:100%;
+    }
+ a img {
+	 border:0;
+ }
+
+html, body {height: 100%;
+			overflow:auto;
+}
+input.rounded {
+	border: 1px solid #ccc;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size: 12px;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
+}
+input.rounded:focus {
+	border-color: #339933;
+}
+div.box{
+	background-color: #CFF;
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size: 12px;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
+}
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 43px;} 
+
+#footer {position: relative;
+	margin-top: -43px; 
+	height: 40px;
+	background-color:#4c4c4c;color:#fff;border-top:3px solid #FE9900;font-size:11px;
+	clear:both;} 
+
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
+
+
+
+[if !IE 7]>
+	<style type="text/css">
+		#wrap {display:table;height:100%}
+	</style>
+<![endif]
+
+*/#header {
+	width: 100%;
+	text-align: center;
+	overflow:hidden;
+}
+#headerImage {
+    height: 200;
+
+    margin-left: -400;
+    margin-top: -100;
+    position: relative;
+    top: 50%;
+    width: 800;
+}
