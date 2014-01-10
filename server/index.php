@@ -68,24 +68,24 @@ if(!empty($_POST)){
 
 #login {
     bottom: 0;
-height: 120px;
-left: 0;
-margin: auto;
-position: fixed;
-top: 0;
-right: 0;
-width: 180px;
-       background-color: #CFF;
-border: 1px solid #ccc;
-        -moz-border-radius: 10px;
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        -moz-box-shadow: 2px 2px 3px #666;
-        -webkit-box-shadow: 2px 2px 3px #666;
-        box-shadow: 2px 2px 3px #666;
-        font-size: 12px;
-padding: 4px 7px;
-outline: 0;
+    height: 120px;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 180px;
+    background-color: #CFF;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 2px 2px 3px #666;
+    -webkit-box-shadow: 2px 2px 3px #666;
+    box-shadow: 2px 2px 3px #666;
+    font-size: 12px;
+    padding: 4px 7px;
+    outline: 0;
          -webkit-appearance: none;
 }
 #loginform {
