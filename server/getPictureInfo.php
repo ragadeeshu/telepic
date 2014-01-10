@@ -17,13 +17,11 @@ $query_params = array(
     ':id' => $_POST['id']
 ); 
 
-try 
-{ 
+try { 
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
 } 
-catch(PDOException $ex) 
-{ 
+catch(PDOException $ex) { 
     die("Failed to run query."); 
 }
 $row = $stmt->fetch();
