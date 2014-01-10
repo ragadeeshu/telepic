@@ -1,7 +1,6 @@
 <?php 
     require("common.php"); 
-    if(empty($_SESSION['user'])) 
-    { 
+    if(empty($_SESSION['user'])) { 
         header("Location: index.php"); 
         die("Log in first!");
     } 
@@ -22,15 +21,15 @@
 $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
         } catch(PDOException $ex) { 
-die("Failed to run query."); 
+                die("Failed to run query."); 
         }
 		$row = $stmt->fetch();
 		if($row){ 
 			if($row['owner']!=$_SESSION['user']['username']){
-die("Permission denied");
+                                die("Permission denied");
 			}
 		}else{
-die("Permission denied");
+                        die("Permission denied");
 		}
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
