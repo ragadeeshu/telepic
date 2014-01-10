@@ -122,6 +122,6 @@ Password:
 </div>
 </div>
 </div>
-<div id="footer"> Jinny, världens mesta(?) häst? - <a href="http://www.jinny.se">www.jinny.se</a> </div>
+<div id="footer">Your footer text here </div>
 </body>
 </html>
