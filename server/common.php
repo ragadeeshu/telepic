@@ -5,18 +5,16 @@
     $password = "db_pass"; 
     $host = "db_pass"; 
     $dbname = "db_name"; 
-	$port = "db_port";
+    $port = "db_port";
 
     // Using UTF-8 
     $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'); 
      
-    try 
-    { 
+    try { 
         //Connect to database
         $db = new PDO("mysql:host={$host};dbname={$dbname};port={$port};charset=utf8", $username, $password, $options); 
     } 
-    catch(PDOException $ex) 
-    { 
+    catch(PDOException $ex) { 
         // Failed to connect to database. 
         die("Failed to connect to the database."); 
     } 
@@ -25,18 +23,12 @@
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); 
      
     // Undo magic quotes. 
-    if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) 
-    { 
-        function undo_magic_quotes_gpc(&$array) 
-        { 
-            foreach($array as &$value) 
-            { 
-                if(is_array($value)) 
-                { 
+    if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) { 
+        function undo_magic_quotes_gpc(&$array) { 
+            foreach($array as &$value) { 
+                if(is_array($value)) { 
                     undo_magic_quotes_gpc($value); 
-                } 
-                else 
-                { 
+                } else { 
                     $value = stripslashes($value); 
                 } 
             } 

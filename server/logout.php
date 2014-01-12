@@ -1,6 +1,6 @@
 <?php 
     require("common.php"); 
-        session_start(); # NOTE THE SESSION START
+        session_start(); 
 $_SESSION = array();
 	unset($_SESSION['user']); 
  

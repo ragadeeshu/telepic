@@ -26,7 +26,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 	$path = "../telepicUpload/".$_SESSION['user']['username'];
     if (file_exists($path ."/". $_FILES["file"]["name"])) {
       echo $_FILES["file"]["name"] . " already exists. ";
-      } else if (strlen($_POST['description'])>500) {
+      } else if (strlen($_POST['description'])>120) {
 		echo "Description to long.";
 	} else {	  
 	  if (!file_exists($path)) {

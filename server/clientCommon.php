@@ -15,23 +15,17 @@
     catch(PDOException $ex) 
     { 
         
-        die("Failed to connect to the database: " . $ex->getMessage()); 
+        die("Failed to connect to the database."); 
     } 
     
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); 
-    if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) 
-    { 
-        function undo_magic_quotes_gpc(&$array) 
-        { 
-            foreach($array as &$value) 
-            { 
-                if(is_array($value)) 
-                { 
+    if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) { 
+        function undo_magic_quotes_gpc(&$array) { 
+            foreach($array as &$value) { 
+                if(is_array($value)) { 
                     undo_magic_quotes_gpc($value); 
-                } 
-                else 
-                { 
+                } else { 
                     $value = stripslashes($value); 
                 } 
             } 
@@ -43,8 +37,7 @@
     } 
     
     header('Content-Type: text/html; charset=utf-8'); 
-    if(!empty($_POST)) 
-    { 
+    if(!empty($_POST)) { 
         $query = " 
             SELECT 
                 id, 
@@ -59,38 +52,31 @@
             ':username' => $_POST['username'] 
         ); 
          
-        try 
-        { 
+        try { 
         
             $stmt = $db->prepare($query); 
             $result = $stmt->execute($query_params); 
-        } 
-        catch(PDOException $ex) 
-        { 
+        } catch(PDOException $ex) { 
             die("Failed to run query: " . $ex->getMessage()); 
         } 
         $login_ok = false; 
 		$login_status="";
         
         $row = $stmt->fetch(); 
-        if($row &&$_POST['username']=="Client_username") 
-        { 
+        if($row &&$_POST['username']=="Client_username") { 
             
             $check_password = hash('sha256', $_POST['password'] . $row['salt']); 
-            for($round = 0; $round < 65533; $round++) 
-            { 
+            for($round = 0; $round < 65533; $round++) { 
                 $check_password = hash('sha256', $check_password . $row['salt']); 
             } 
              
-            if($check_password === $row['password']) 
-            { 
+            if($check_password === $row['password']) { 
            
                 $login_ok = true; 
             } 
         } 
         
-        if(!$login_ok) 
-        { 
+        if(!$login_ok) { 
             die("Not authorized");
             
         } 

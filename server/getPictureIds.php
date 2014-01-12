@@ -6,14 +6,11 @@ $query = "
             FROM pictures 
 			ORDER BY date DESC 
         ";          
-        try 
-        { 
+        try { 
             
             $stmt = $db->prepare($query); 
             $result = $stmt->execute(); 
-        } 
-        catch(PDOException $ex) 
-        { 
+        } catch(PDOException $ex) { 
             die("Failed to run query. " ); 
         }
 		foreach($stmt->fetchAll(PDO::FETCH_ASSOC) as $curimg){
