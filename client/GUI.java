@@ -47,8 +47,8 @@ public class GUI extends JFrame implements KeyListener {
 
 	private void changeInfo(TPPicture pic) {
 		currentInfo.setText(pic.getInfo());
-		owner.setText("Bilden är från " + pic.getOwner());
-		date.setText("Bilden tillagd: " + pic.getDate());
+		owner.setText("Picture is from " + pic.getOwner());
+		date.setText("Picture added on: " + pic.getDate());
 		try {
 			myPicture = ImageIO.read(new File(pic.getPath()));
 		} catch (IOException e) {
