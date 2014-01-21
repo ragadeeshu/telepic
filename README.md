@@ -13,7 +13,7 @@ First off, sorry for the hard-coded static variables instead of a config file, w
 
 You will thus need to enter appropriate values in common.php, clientCommon.php and PhpCaller.java. You also need to compile the client code yourself. I compiled it with java 8 in order to run it on a Raspberry Pi.
 
-Your database needs to have the following tables:
+Your database needs to have the following tables (easier to read in raw):
 
 
 users
